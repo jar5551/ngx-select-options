@@ -9,7 +9,14 @@ Install package with npm
 
 `npm install ngx-select-options --save`
 
-Import in your module file and include in import section.
+Import in your module file:
+
+`import {NgxSelectOptions} from 'ngx-select-options'`
+
+And then include this module in import section in @NgModule
+
+`imports: [
+     NgxSelectOptions, ....]`
 
 ## How to use in code
 
