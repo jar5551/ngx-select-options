@@ -19,5 +19,5 @@ import { NgxSelectOptionsFilterPipe } from './ngx-select-options-filter.pipe';
     NgxSelectOptionsComponent
   ]
 })
-export class NgxSelectOptionsModule {
+export class NgxSelectOptions {
 }
