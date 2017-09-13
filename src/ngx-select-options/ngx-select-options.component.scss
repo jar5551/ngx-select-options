@@ -1,0 +1,38 @@
+$listFontSize: .9em;
+$btn-primary-bg: #0275d8 !default;
+$btn-primary-color: #fff !default;
+
+select {
+  width: 100%;
+}
+
+.dropdown-menu {
+  overflow: auto;
+  max-height: 500px;
+  margin-bottom: 1em;
+}
+
+.dropdown-item {
+  line-height: 1.5em;
+  font-size: $listFontSize;
+
+  &.selected {
+    background-color: $btn-primary-bg;
+    color: $btn-primary-color;
+  }
+
+  &.searchFieldItem {
+    background-color: transparent;
+
+    .form-control {
+      border: none;
+      margin: 0;
+      padding: 0.5rem 0;
+    }
+  }
+}
+
+.form-group {
+  margin: 0;
+  font-size: $listFontSize;
+}

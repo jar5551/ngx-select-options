@@ -1,0 +1,17 @@
+<!--<select>
+  <option *ngFor="let option of _options" [value]="option.value">{{option.label}}</option>
+</select>-->
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="openDropdown($event)">
+    {{!value ? placeholder : (value | ngxSelectOptions:_options)}}
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <div class="dropdown-item searchFieldItem">
+      <div class="form-group">
+        <input class="form-control" [placeholder]="searchText" [(ngModel)]="searchField" name="searchField">
+      </div>
+    </div>
+    <a class="dropdown-item" href="#" *ngFor="let option of _options | ngxSelectOptionsFilter:searchField" (click)="selectOption(option.value, $event)" [class.selected]="value === option.value">{{option.label}}</a>
+  </div>
+</div>
