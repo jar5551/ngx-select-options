@@ -39,5 +39,6 @@
     "bootstrap": "4.0.0-alpha.6",
     "rxjs": "^5.4.3",
     "typescript": "^2.5.2"
-  }
+  },
+  "typings": "index.d.ts"
 }
