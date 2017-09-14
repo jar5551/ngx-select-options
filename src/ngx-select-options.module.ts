@@ -1,8 +1,9 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+
 import {NgxSelectOptionsComponent} from './ngx-select-options/ngx-select-options.component';
 import {NgxSelectOptionsPipe} from './ngx-select-options.pipe';
-import {FormsModule} from '@angular/forms';
 import {NgxSelectOptionsFilterPipe} from './ngx-select-options-filter.pipe';
 
 @NgModule({
@@ -16,7 +17,9 @@ import {NgxSelectOptionsFilterPipe} from './ngx-select-options-filter.pipe';
     NgxSelectOptionsFilterPipe
   ],
   exports: [
-    NgxSelectOptionsComponent
+    NgxSelectOptionsComponent,
+    NgxSelectOptionsPipe,
+    NgxSelectOptionsFilterPipe
   ]
 })
 export class NgxSelectOptionsModule {
