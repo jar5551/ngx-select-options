@@ -10,10 +10,51 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   multi: true
 };
 
+const styles = `
+select {
+  width: 100%; }
+
+.dropdown-menu {
+  overflow: auto;
+  max-height: 500px;
+  margin-bottom: 1em; }
+
+.dropdown-item {
+  line-height: 1.5em;
+  font-size: 0.9em; }
+  .dropdown-item.selected {
+    background-color: #0275d8;
+    color: #fff; }
+  .dropdown-item.searchFieldItem {
+    background-color: transparent; }
+    .dropdown-item.searchFieldItem .form-control {
+      border: none;
+      margin: 0;
+      padding: 0.5rem 0; }
+
+.form-group {
+  margin: 0;
+  font-size: 0.9em; }
+`;
+
 @Component({
   selector: 'ngx-select-options',
-  templateUrl: './ngx-select-options.component.html',
-  styleUrls: ['./ngx-select-options.component.css'],
+  template: `
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="openDropdown($event)">
+        {{!value ? placeholder : (value | ngxSelectOptions:_options)}}
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <div class="dropdown-item searchFieldItem">
+          <div class="form-group">
+            <input class="form-control" [placeholder]="searchText" [(ngModel)]="searchField" name="searchField">
+          </div>
+        </div>
+        <a class="dropdown-item" href="#" *ngFor="let option of _options | ngxSelectOptionsFilter:searchField" (click)="selectOption(option.value, $event)" [class.selected]="value === option.value">{{option.label}}</a>
+      </div>
+    </div>
+  `,
+  styles: [styles],
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
 })
 export class NgxSelectOptionsComponent implements ControlValueAccessor {
