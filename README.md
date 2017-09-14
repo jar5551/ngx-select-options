@@ -7,22 +7,32 @@ Features options search. Works perfectly with Angular ngModel directive.
 
 Install package with npm
 
-`npm install ngx-select-options --save`
+```sh
+npm install ngx-select-options --save
+```
 
 Import in your module file:
 
-`import {NgxSelectOptions} from 'ngx-select-options'`
+```ts
+import {NgxSelectOptions} from 'ngx-select-options'
+```
 
 And then include this module in import section in @NgModule
 
-`imports: [
-     NgxSelectOptions, ....]`
+```ts
+imports: [
+    NgxSelectOptions,
+    ...
+]
+```
 
 ## How to use in code
 
 Instead of default select input use code down below
 
-`<ngx-select-options placeholder="Select option" [(ngModel)]="valueModel" [options]="options" ngDefaultControl></ngx-select-options>`
+```html
+<ngx-select-options placeholder="Select option" [(ngModel)]="valueModel" [options]="options" ngDefaultControl></ngx-select-options>
+```
 
 Parameter | Description
 --- | ---
@@ -34,6 +44,14 @@ options | Array of options in dropdown
 
 Options data displayed on dropdown shoud have structure like this:
 
-`[{ label: 'Option label', value: 123 }, {...}]`
+```js
+[
+  {
+    label: 'Option label',
+    value: 123
+    },
+    {...}
+]
+```
 
 Optional you can use also `key` value that defines selected value on dropdown button (instead of placeholder, when value is already selected).
