@@ -40,5 +40,5 @@
     "rxjs": "^5.4.3",
     "typescript": "~2.2.0"
   },
-  "typings": "index.d.ts"
+  "typings": "ngx-select-options.d.ts"
 }

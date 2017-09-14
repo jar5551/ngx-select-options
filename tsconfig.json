@@ -16,7 +16,7 @@
     ]
   },
   "files": [
-    "index.ts"
+    "ngx-select-options.ts"
   ],
   "exclude": [
     "node_modules"
